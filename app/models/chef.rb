@@ -16,5 +16,4 @@ class Chef < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   has_one :payment
-  accepts_nested_attributes_for :payment   
 end
