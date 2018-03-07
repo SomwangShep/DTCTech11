@@ -15,6 +15,8 @@ class RegistrationsController < Devise::RegistrationsController
                                  card_cvv: params[:payment]["card_cvv"],
                                  card_expires_month: params[:payment]["card_expires_month"],
                                  card_expires_year: params[:payment]["card_expires_year"]})
+        puts "="*100
+        puts @payment.inspect
         flash[:error] = "Please check registration errors" unless @payment.valid?
         begin
           

@@ -1,0 +1,4 @@
+Files updaet from Mike
+- app/controllers/registrations_controller.rb
+- app/models/chef.rb
+- app/models/payment.rb
