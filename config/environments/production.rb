@@ -12,7 +12,7 @@ Rails.application.configure do
   
   # ------------ ADD --------------------------
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { :host => 'dtctech6.herokuapp.com/', :protocol => 'https'}  
+  config.action_mailer.default_url_options = { :host => 'dtctech13.herokuapp.com/', :protocol => 'https'}  
   # ----------- End ADD ----------------------
   
   # Full error reports are disabled and caching is turned on.
@@ -88,6 +88,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.web_socket_server_url = "wss://dtctech6.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://dtctech6.herokuapp.com', 'http://dtctech6.herokuapp.com/']
+  config.web_socket_server_url = "wss://dtctech13.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://dtctech13.herokuapp.com', 'http://dtctech13.herokuapp.com/']
 end

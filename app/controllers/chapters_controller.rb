@@ -1,4 +1,5 @@
 class ChaptersController < ApplicationController
+  before_action :authenticate_chef!
   def about
   end
   

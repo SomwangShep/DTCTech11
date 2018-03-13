@@ -65,14 +65,20 @@
             </ul>
           </li>
         <% else %>
+        
           <!--<li><#%= link_to "Sign Up", new_chef_registration_path %></li>-->
           <!--<li><#%= link_to "Log In", login_path %></li>  -->
           <!--<li><#%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>-->
         <% end %>
+        <% if chef_signed_in? %>
+          <li><%= link_to "Testing if sign in", new_chef_registration_path %></li><li>
+        <% end%>
+        
         <li><%= link_to "Sign Up", new_chef_registration_path %></li>
-        <!--<li><#%= link_to "Log Out user", destroy_chef_session_path, method: :delete %></li>        -->
-        <li><%= link_to "Log In", login_path %></li>          
-        <li><%= link_to "Log out chef", logout_path, method: :delete %></li>
+        <li><%= link_to "Log Out user", destroy_chef_session_path, method: :delete %></li>        
+        <!--<li><#%= link_to "Log In Chef", login_path %></li>          -->
+        <!--<li><#%= link_to "Log out chef", logout_path, method: :delete %></li>-->
+        <li><%= link_to "Sign In", new_chef_session_path %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
