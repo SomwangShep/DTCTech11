@@ -35,14 +35,14 @@
           </ul>
 <!-- =================== End chapte list =============================== -->        
         <li><%= link_to "All Posts", recipes_path %></li>
-        <% if logged_in? %>
+        <!--<#% if logged_in? %>-->
           <li><%= link_to "New Posts", new_recipe_path %></li>
           <li><%= link_to "Chat", chat_path %></li>
-        <% end %>
+        <!--<#% end %>-->
         <!-- =============== display all user ================= -->
-        <% if logged_in? && current_chef.admin? %>
+        <!--<#% if logged_in? && current_chef.admin? %>-->
            <li><%= link_to "User", chefs_path %></li>
-        <% end %>
+        <!--<#% end %>-->
         <!-- ================================================== -->        
       </ul>
 
@@ -70,16 +70,23 @@
           <!--<li><#%= link_to "Log In", login_path %></li>  -->
           <!--<li><#%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>-->
         <% end %>
-        <% if chef_signed_in? %>
-          <li><%= link_to "Testing if sign in", new_chef_registration_path %></li><li>
-        <% end%>
-        
-        <li><%= link_to "Sign Up", new_chef_registration_path %></li>
+        <li><%= link_to "Sign Up user", new_chef_registration_path %></li>
         <li><%= link_to "Log Out user", destroy_chef_session_path, method: :delete %></li>        
-        <!--<li><#%= link_to "Log In Chef", login_path %></li>          -->
-        <!--<li><#%= link_to "Log out chef", logout_path, method: :delete %></li>-->
-        <li><%= link_to "Sign In", new_chef_session_path %>
+        <li><%= link_to "Sign In user", new_chef_session_path %>
+        
+        <li><%= link_to "Log In Chef", login_path %></li>          
+        <li><%= link_to "Log out chef", logout_path, method: :delete %></li>
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+        <!--these below only work with old login-->
+        <!--<#% if chef_signed_in? %>-->
+        <!--  <li><#%= link_to "Testing if sign in", new_chef_registration_path %></li><li>-->
+        <!--<#% end%>-->
+        <!--<#% if current_chef %>-->
+        <!--  <li><#%= link_to "Testing if sign in", new_chef_registration_path %></li><li>-->
+        <!--<#% end %>-->
