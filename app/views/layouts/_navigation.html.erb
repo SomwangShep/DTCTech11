@@ -17,37 +17,40 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 <!-- ================= start chapte list =============================== -->         
-       <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-          role="button" aria-haspopup="true" aria-expanded="false">
-          Menu
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><%= link_to "Introduction", chapter1_1_path %></li>
-            <li><%= link_to "Variables", chapter2_1_path %></li>
-            <li><%= link_to "Conditional Statements", chapter3_1_path %></li>
-            <li><%= link_to "Best Programming Practices", chapter4_1_path %></li>
-            <li><%= link_to "While Loops", chapter5_1_path %></li>
-            <li><%= link_to "For Loops", chapter6_1_path %></li>
-            <li><%= link_to "Arrays", chapter7_1_path %></li>
-            <li><%= link_to "Methods", chapter8_1_path %></li>
-            <li><%= link_to "Strings", chapter9_1_path %></li>
-          </ul>
+       <!--<li class="dropdown">-->
+       <!--   <a href="#" class="dropdown-toggle" data-toggle="dropdown" -->
+       <!--   role="button" aria-haspopup="true" aria-expanded="false">-->
+       <!--   Menu-->
+       <!--   <span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+          <!--  <li><#%= link_to "Introduction", chapter1_1_path %></li>-->
+          <!--  <li><#%= link_to "Variables", chapter2_1_path %></li>-->
+          <!--  <li><#%= link_to "Conditional Statements", chapter3_1_path %></li>-->
+          <!--  <li><#%= link_to "Best Programming Practices", chapter4_1_path %></li>-->
+          <!--  <li><#%= link_to "While Loops", chapter5_1_path %></li>-->
+          <!--  <li><#%= link_to "For Loops", chapter6_1_path %></li>-->
+          <!--  <li><#%= link_to "Arrays", chapter7_1_path %></li>-->
+          <!--  <li><#%= link_to "Methods", chapter8_1_path %></li>-->
+          <!--  <li><#%= link_to "Strings", chapter9_1_path %></li>-->
+          <!--</ul>-->
 <!-- =================== End chapte list =============================== -->        
         <li><%= link_to "All Posts", recipes_path %></li>
-        <% if logged_in? %>
+        <!--<#% if logged_in? %>-->
           <li><%= link_to "New Posts", new_recipe_path %></li>
           <li><%= link_to "Chat", chat_path %></li>
-        <% end %>
+        <!--<#% end %>-->
         <!-- =============== display all user ================= -->
-        <% if logged_in? && current_chef.admin? %>
+        <!--<#% if logged_in? && current_chef.admin? %>-->
            <li><%= link_to "User", chefs_path %></li>
-        <% end %>
+        <!--<#% end %>-->
         <!-- ================================================== -->        
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
+        <!--Add-->
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
+        <!--end add-->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
             role="button" aria-haspopup="true" aria-expanded="false">
@@ -65,29 +68,27 @@
             </ul>
           </li>
         <% else %>
-        
-          <!--<li><#%= link_to "Sign Up", new_chef_registration_path %></li>-->
-          <!--<li><#%= link_to "Log In", login_path %></li>  -->
-          <!--<li><#%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>-->
+          <li><%= link_to "Sign Up user", new_chef_registration_path %></li>
+          <li><%= link_to "Log Out user", destroy_chef_session_path, method: :delete %></li>        
+          <li><%= link_to "Log In", login_path %></li>          
         <% end %>
-        
-        <!--these below only work with old login-->
-        <% if chef_signed_in? %>
-          <li><%= link_to "Testing chef_signed_in", new_chef_registration_path %></li><li>
-        <% end%>
-        <% if current_chef %>
-          <li><%= link_to "Testing current_chef", new_chef_registration_path %></li><li>
-        <% end %>
-        
-        <li><%= link_to "Sign Up user", new_chef_registration_path %></li>
-        <li><%= link_to "Log Out user", destroy_chef_session_path, method: :delete %></li>        
-        <li><%= link_to "Sign In user", new_chef_session_path %>
-        <li><%= "|" %></li>
-        <li><%= link_to "Log In Chef", login_path %></li>          
-        <li><%= link_to "Log out chef", logout_path, method: :delete %></li>
-        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
+<!--copy-->
+        <!--these below only work with old login-->
+        <!--<#% if chef_signed_in? %>-->
+        <!--  <li><#%= link_to "Testing chef_signed_in", new_chef_registration_path %></li><li>-->
+        <!--<#% end%>-->
+        <!--<#% if current_chef %>-->
+        <!--  <li><#%= link_to "Testing current_chef", new_chef_registration_path %></li><li>-->
+        <!--<#% end %>-->
+
+          <!--<li><#%= link_to "Sign Up", new_chef_registration_path %></li>-->
+          <!--<li><#%= link_to "Log In", login_path %></li>  -->
+          <!--<li><#%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>-->
+        
+ <!--<li><#%= link_to "Sign In user", new_chef_session_path %>-->   
+  <!--<li><#%= link_to "Log out chef", logout_path, method: :delete %></li>-->

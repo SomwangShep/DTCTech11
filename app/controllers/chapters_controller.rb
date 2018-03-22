@@ -1,5 +1,6 @@
 class ChaptersController < ApplicationController
-  before_action :authenticate_chef!
+  # before_action :authenticate_chef! # for Devised
+  before_action :require_user # old login
   def about
   end
   

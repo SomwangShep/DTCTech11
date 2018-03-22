@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # devise_for :chefs
   devise_for :chefs, :controllers => { :registrations => 'registrations' }
   # root 'welcome#index'
 
@@ -21,8 +20,6 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"  
-  
-  get '/signup2', to: 'chapters#chapter1_1'
   
   resources :ingredients, except: [:destroy]
   
